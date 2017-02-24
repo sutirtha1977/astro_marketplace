@@ -9,17 +9,9 @@
       <small id="categoryNameHelp" class="form-text text-danger">Please enter the Category Name.</small>
     </div>
   </div>
-  
+  <!-- Checkbox -->
   <div class="form-group">
-    <!-- Radio Button -->
-    <div class="col-sm-4 col-xs-offset-4">
-      <%= f.radio_button(:category, "Service") %>
-      <%= label_tag(:service, "Service") %>
-       <%= f.radio_button(:category, "Product") %>
-      <%= label_tag(:product, "Product") %>              
-    </div>
-    <!-- Checkbox -->
-    <div class="col-sm-4">
+    <div class="col-xs-offset-4">
       <%= label_tag(:visible, "Visible") %>
       <%= f.check_box :visible %>
     </div>

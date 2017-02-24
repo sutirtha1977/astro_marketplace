@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20170224001055) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.string   "category"
     t.boolean  "visible",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
