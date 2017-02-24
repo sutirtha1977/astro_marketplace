@@ -1,8 +1,12 @@
 <% @page_title = "Update Sub Category" %>
 <% @page_desc = "This area is to update a Sub Category" %>
 
-<%= link_to '<< Back to Sub Categories', sections_path(:category_id => @category.id), class: "btn btn-link" %>
-
-<%= form_for(@section, :url => section_path(@section, :category_id => @category.id), html: {class: 'form-horizontal'}) do |f| %>
-    <%= render(:partial => 'form', :locals => {:f => f}) %> 
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+		<%= form_for(@section, :url => section_path(@section, :category_id => @category.id), html: {class: 'form-horizontal'}) do |f| %>
+		    <%= render(:partial => 'form', :locals => {:f => f}) %> 
+		<% end %>
+    </div>
+  </div>
+</div>

@@ -18,16 +18,16 @@
         <thead>
           <tr>
             <th class="text-center">Name</th>
-            <th class="text-center">Category</th>
+            <th class="text-center">Type</th>
             <th class="text-center">Visible</th>
             <th class="text-center">Action</th>
-            <th class="text-center">View Sub Categories</th>
+            <th class="text-center">Associated Sub Categories</th>
           </tr> 
         </thead>
         <tbody id="myTable">  
           <% @categories.each do |category| %>
           <tr>
-            <td><%= category.name %></td>
+            <td class="text-center"><%= category.name %></td>
             <td class="text-center"><%= category.category %></td>
             <td class="text-center"><%= category.visible ? "Yes" : "No" %></td>
             <td class="text-center">

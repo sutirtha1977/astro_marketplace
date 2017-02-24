@@ -1,9 +1,12 @@
 <% @page_title = "Update Category" %>
 <% @page_desc = "This area is to update a category" %>
 
-<%= link_to '<< Back to Categories', categories_path, class: "btn btn-link" %>
-
-
-<%= form_for(@category, html: {class: 'form-horizontal'}) do |f| %>
-    <%= render(:partial => 'form', :locals => {:f => f}) %> 
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+		<%= form_for(@category, html: {class: 'form-horizontal'}) do |f| %>
+		    <%= render(:partial => 'form', :locals => {:f => f}) %> 
+		<% end %>
+    </div>
+  </div>
+</div>

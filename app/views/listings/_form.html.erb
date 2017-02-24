@@ -1,32 +1,51 @@
 <%= error_messages_for(f.object) %>
 
-<div class="container">
-  <form>
-    <div class="form-group">
-      <%= label_tag(:listingName, "Listing Name") %>
+<fieldset>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="listingName">Listing Name</label>
+    <div class="col-sm-8">
       <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Enter Listing Name') %>
-      <small id="listingNameHelp" class="form-text text-muted">Please enter the Listing Name.</small>
+      <small id="listingNameHelp" class="form-text text-danger">Please enter the Listing Name.</small>
     </div>
-    <div class="form-group">
-      <%= label_tag(:sectionName, "Sub Category Name") %>
+  </div>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="sectionName">Sub Category Name</label>
+    <div class="col-sm-8 text-danger">
       <%= f.object.section.name %>
-    </div> 
-    <div class="form-group">
-      <%= label_tag(:description, "Description") %>
+    </div>
+  </div>
+  <!-- Text Area-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="description">Description</label>
+    <div class="col-sm-8">
       <%= f.text_area(:description, class: 'form-control', id: 'content', size:'40x10') %>
-    </div> 
-     <div class="form-group">
-      <%= label_tag(:price, "Price") %>
+    </div>
+  </div>          
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="price">Price</label>
+    <div class="col-sm-8">
       <%= f.text_field(:price, class: 'form-control', id: 'price', placeholder: 'Enter Price') %>
-      <small id="priceHelp" class="form-text text-muted">Please enter the Price.</small>
-    </div>   
-    <div class="form-group">
+    </div>
+  </div>
+  <!-- Checkbox -->
+  <div class="form-group">
+    <div class="col-xs-offset-4">
       <%= label_tag(:visible, "Visible") %>
       <%= f.check_box :visible %>
-      <p>
-        <small id="visibilityHelp" class="form-text text-muted">Please choose whether to show or not.</small>        
-      </p>
-    </div> 
-    <%= f.submit("Submit", :class => 'btn btn-primary') %>
-  </form>
-</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="pull-right">
+        <%= link_to 'Cancel', listings_path(:section_id => @section.id), class: "btn btn-default" %>
+        <%= f.submit("Submit", :class => 'btn btn-primary') %>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+
