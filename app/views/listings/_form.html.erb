@@ -1,0 +1,32 @@
+<%= error_messages_for(f.object) %>
+
+<div class="container">
+  <form>
+    <div class="form-group">
+      <%= label_tag(:listingName, "Listing Name") %>
+      <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Enter Listing Name') %>
+      <small id="listingNameHelp" class="form-text text-muted">Please enter the Listing Name.</small>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:sectionName, "Sub Category Name") %>
+      <%= f.object.section.name %>
+    </div> 
+    <div class="form-group">
+      <%= label_tag(:description, "Description") %>
+      <%= f.text_area(:description, class: 'form-control', id: 'content', size:'40x10') %>
+    </div> 
+     <div class="form-group">
+      <%= label_tag(:price, "Price") %>
+      <%= f.text_field(:price, class: 'form-control', id: 'price', placeholder: 'Enter Price') %>
+      <small id="priceHelp" class="form-text text-muted">Please enter the Price.</small>
+    </div>   
+    <div class="form-group">
+      <%= label_tag(:visible, "Visible") %>
+      <%= f.check_box :visible %>
+      <p>
+        <small id="visibilityHelp" class="form-text text-muted">Please choose whether to show or not.</small>        
+      </p>
+    </div> 
+    <%= f.submit("Submit", :class => 'btn btn-primary') %>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<% @page_title = "All Listings" %>
+
+<%= link_to("<< Back to Categories", categories_path, :class => 'btn btn-link') %>
+
+
+<div class="page-header">
+  <h2>Show All Listings</h2>
+</div>
+
+<%= link_to '<< Add New Listing', new_listing_path(:section_id => @section.id), class: "btn btn-link" %>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Listing Name</th>
+    <th class="center">Sub Category Name</th>
+    <th class="center">Description</th>
+    <th class="center">Price</th>
+    <th class="center">Visible</th>
+    <th class="center">Actions</th>
+  </tr>
+  
+  <% @listings.each do |listing| %>
+    <tr>
+      <td><%= listing.name %></td>
+      <td><%= @section.name %></td>
+      <td><%= listing.description %></td>
+      <td><%= listing.price %></td>
+      <td><%= listing.visible ? "Yes" : "No" %></td>
+      <td>
+        <%= link_to("",listing_path(listing, :section_id => @section.id), :class => "glyphicon glyphicon-flag") %>
+        <%= link_to("",edit_listing_path(listing, :section_id => @section.id), :class => "glyphicon glyphicon-pencil") %>
+        <%= link_to("",delete_listing_path(listing, :section_id => @section.id), :class => "glyphicon glyphicon-trash") %>
+      </td>
+    </tr>
+  <% end %>
+</table>

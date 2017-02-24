@@ -1,0 +1,11 @@
+<% @page_title = "Update Listing" %>
+
+<%= link_to '<< Back to Listings', listings_path(:section_id => @section.id), class: "btn btn-link" %>
+
+<div class="page-header">
+  <h2>Update Listing</h2>
+</div>
+
+<%= form_for(@listing, :url => listing_path(@listing, :section_id => @section.id), html: {class: 'form-horizontal'}) do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f}) %> 
+<% end %>

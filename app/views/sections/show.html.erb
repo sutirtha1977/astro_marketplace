@@ -1,0 +1,24 @@
+<% @page_title = "Show Sub Category" %>
+
+<%= link_to("<< Back to Sub Categories", sections_path(:category_id => @category.id), :class => 'btn btn-link') %>
+
+<div class="page-header">
+  <h2>Show Sub Category</h2>
+</div>
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="center">Sub Category Name</th>
+    <th class="center">Category Name</th>
+    <th class="center">Visible</th>
+    <th class="center">Created at</th>
+    <th class="center">Updated at</th>
+  </tr>
+  <tr>
+    <td><%= @section.name %></td>
+    <td><%= @category.name %></td>
+    <td><%= @section.visible ? 'Yes' : 'No' %></td>
+    <td><%= @section.created_at %></td>
+    <td><%= @section.updated_at %></td>
+  </tr>
+</table>

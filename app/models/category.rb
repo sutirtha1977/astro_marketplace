@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
 	
+	has_many :sections
 
 	scope :visible, lambda { where(:visible => true) }
   	scope :invisible, lambda { where(:visible => false) }

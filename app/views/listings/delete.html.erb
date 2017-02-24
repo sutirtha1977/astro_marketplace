@@ -1,0 +1,17 @@
+<% @page_title = "Delete Listing" %>
+
+<%= link_to '<< Back to Listings', listings_path(:section_id => @section.id) , class: "btn btn-link" %>
+
+<div class="page-header">
+  <h2>Delete Listing</h2>
+</div>
+
+<%= form_for(@listing, :url => listing_path(@listing, :section_id => @section.id), :method => 'delete',html: {class: 'form-horizontal'}) do |f| %>
+	<div class="container">
+		<form>
+			<p class="text-warning"><h3>Are you sure you want to permanently delete this listing?</h3></p>
+			<p class="text-info"><h3><%= f.object.name %></h3></p>
+			<%= f.submit("Delete Listing", :class => 'btn btn-danger') %>
+		</form>
+	</div>
+<% end %>

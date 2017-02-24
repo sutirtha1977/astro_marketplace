@@ -36,6 +36,7 @@ gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
