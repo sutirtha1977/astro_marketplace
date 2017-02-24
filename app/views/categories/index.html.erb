@@ -1,12 +1,12 @@
-<% @page_title = "All Categories" %>
-
+<% @page_title = "Show All Categories" %>
+<% @page_desc = "This area displays all categories" %>
 
 <div class="col-md-10 col-md-offset-1">
   <div class="panel panel-default panel-table">
     <div class="panel-heading">
       <div class="row">
         <div class="col col-xs-6">
-          <h3 class="panel-title">Show All Categories</h3>
+          <h3 class="panel-title"></h3>
         </div>
         <div class="col col-xs-6 text-right">
           <%= link_to 'Add New Category', new_category_path, class: "btn btn-sm btn-primary btn-create" %>
@@ -34,6 +34,8 @@
               <%= link_to("", category_path(category), 
                 :class => "btn btn-primary btn-xs glyphicon glyphicon-flag", 
                 :title => "Show") %>
+
+
               <%= link_to("", edit_category_path(category), 
                 :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
                 :title => "Edit") %>
@@ -63,3 +65,4 @@
     </div> -->
   </div>
 </div>
+
