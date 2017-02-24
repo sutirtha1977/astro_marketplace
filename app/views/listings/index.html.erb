@@ -1,7 +1,7 @@
 <% @page_title = "Show All Listings" %>
 <% @page_desc = "This area is to show all listings" %>
 
-<div>
+<div class="container">
   <div class="panel panel-default panel-table">
     <div class="panel-heading">
       <div class="row">
@@ -13,55 +13,31 @@
         </div>
       </div>
     </div>
-    <div class="panel-body table-responsive">
-      <table class="table table-striped table-bordered table-list">
-        <thead>
-          <tr>
-            <th class="text-center">Listing Name</th>
-            <th class="text-center">Sub Category Name</th>
-            <th class="text-center">Description</th>
-            <th class="text-center">Price</th>
-            <th class="text-center">Visible</th>
-            <th class="text-center">Actions</th>
-          </tr> 
-        </thead>
-        <tbody id="myTable">  
-          <% @listings.each do |listing| %>
-              <tr>
-                <td><%= listing.name %></td>
-                <td class="text-center"><%= @section.name %></td>
-                <td><%= listing.description %></td>
-                <td class="text-center"><%= listing.price %></td>
-                <td class="text-center"><%= listing.visible ? "Yes" : "No" %></td>
-                <td class="text-center">
-                  <%= link_to("", listing_path(listing, :section_id => @section.id), 
-                    :class => "btn btn-primary btn-xs glyphicon glyphicon-flag", 
-                    :title => "Show") %>
-                  <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
-                    :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
-                    :title => "Edit") %>
-                  <%= link_to("", delete_listing_path(listing, :section_id => @section.id), 
-                    :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
-                    :title => "Delete") %>
-                </td>
-              </tr>
-            <% end %>
-        </tbody>
-      </table>
-    </div>
-<!--     <div class="panel-footer">
-      <div class="row">
-        <div class="col col-xs-4">Page 1 of 5
-        </div>
-        <div class="col col-xs-8">
-          <ul class="pagination hidden-xs pull-right" id="myPager">
-          </ul>
-          <ul class="pagination visible-xs pull-right">
-              <li><a href="#">«</a></li>
-              <li><a href="#">»</a></li>
-          </ul>
+  </div>
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <div class="span3">
+        <div class="well">
+          <h2 class="text-warning"><%= listing.name %></h2>
+          <p><span class="label label-success"><%= @section.name %></span></p>         
+          <p><%= listing.description %></p>
+          <hr>
+          <h3><%= listing.price %></h3>
+          <hr>
+          <p>
+            <%= link_to("", listing_path(listing, :section_id => @section.id), 
+              :class => "btn btn-primary btn-xs glyphicon glyphicon-flag", 
+              :title => "Show") %>
+            <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
+              :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
+              :title => "Edit") %>
+            <%= link_to("", delete_listing_path(listing, :section_id => @section.id), 
+              :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
+              :title => "Delete") %>
+          </p>
         </div>
       </div>
-    </div> -->
+    <% end %>
   </div>
 </div>
+
