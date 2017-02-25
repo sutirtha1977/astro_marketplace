@@ -10,7 +10,9 @@
             <h3 class="panel-title"></h3>
           </div>
           <div class="col col-xs-6 text-right">
-            <%= link_to 'Add Category', new_category_path, class: "btn btn-danger btn-xs" %>
+            <%= link_to 'Add Category', 
+                new_category_path, 
+                class: "btn btn-square-toround btn-bordered-primary btn-sm" %>
           </div>
         </div>
       </div>
@@ -29,16 +31,22 @@
             <% @categories.each do |category| %>
             <tr>
               <td class="text-center"><%= category.name %></td>
-              <td class="text-center"><%= category.visible ? "Yes" : "No" %></td>
+              <td class="text-center">
+                <%= category.visible ? "Yes" : "No" %>
+              </td>
               <td class="text-center">
                 <%= link_to("", edit_category_path(category), 
-                  :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
+                  :class => "btn btn-bordered-warning btn-xs glyphicon glyphicon-edit",
                   :title => "Edit") %>
                 <%= link_to("", delete_category_path(category), 
-                  :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
+                  :class => "btn btn-bordered-danger btn-xs glyphicon glyphicon-remove",
                   :title => "Delete") %>
               </td>
-              <td class="text-center"><%= link_to 'Click Me!', sections_path(:category_id => category.id), class: "btn btn-success btn-xs" %></td>
+              <td class="text-center">
+                <%= link_to 'Click Me!', 
+                    sections_path(:category_id => category.id), 
+                    class: "btn btn-rounded btn-round-tosquare btn-bordered-success btn-xs" %>
+              </td>
             </tr>
             <% end %>
           </tbody>

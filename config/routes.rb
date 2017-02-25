@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'categories#index'
 
-  get 'admin', :to => 'access#main'
+  get 'admin', :to => 'admin_users#index'
   get 'access/main'
   get 'access/login'
   post 'access/attempt_login'

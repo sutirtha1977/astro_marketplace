@@ -7,10 +7,14 @@
       <div class="panel-heading">
         <div class="row">
           <div class="col col-xs-6">
-            <%= link_to("Back to Main Categories", categories_path, :class => 'btn btn-danger btn-xs') %>
+            <%= link_to("Back to Main Categories", 
+                categories_path, 
+                :class => 'btn btn-square-toround btn-bordered-primary btn-sm') %>
           </div>
           <div class="col col-xs-6 text-right">
-            <%= link_to 'Add Sub Category', new_section_path(:category_id => @category.id), class: "btn btn-danger btn-xs" %>
+            <%= link_to 'Add Sub Category', 
+                new_section_path(:category_id => @category.id), 
+                class: "btn btn-square-toround btn-bordered-primary btn-sm" %>
           </div>
         </div>
       </div>
@@ -34,14 +38,16 @@
                   <td class="text-center"><%= section.visible ? "Yes" : "No" %></td>
                   <td class="text-center">
                     <%= link_to("", edit_section_path(section, :category_id => @category.id), 
-                      :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
+                      :class => "btn btn-bordered-warning btn-xs glyphicon glyphicon-edit",
                       :title => "Edit") %>
                     <%= link_to("", delete_section_path(section, :category_id => @category.id), 
-                      :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
+                      :class => "btn btn-bordered-danger btn-xs glyphicon glyphicon-remove",
                       :title => "Delete") %>
                   </td>
                   <td class="text-center">
-                    <%= link_to 'Click Me!', listings_path(:section_id => section.id), class: "btn btn-success btn-xs" %>
+                    <%= link_to 'Click Me!', 
+                        listings_path(:section_id => section.id), 
+                        class: "btn btn-rounded btn-round-tosquare btn-bordered-success btn-xs" %>
                   </td>
                 </tr>
               <% end %>

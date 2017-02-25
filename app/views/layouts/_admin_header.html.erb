@@ -14,9 +14,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="nav-menu">
           <ul class="nav navbar-nav navbar-right">
+              <% if session[:user_id] %>
               <li role="presentation"><%= link_to("Manage Categories", categories_path) %></li>
               <li role="presentation"><%= link_to("Manage Admin Users", admin_users_path) %></li>
               <li role="presentation"><%= link_to("Logout", access_logout_path) %></li>
+              <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
