@@ -20,15 +20,16 @@
       <% @listings.each do |listing| %>
         <div class="span3">
           <div class="well">
-            <h2 class="text-warning"><%= listing.name %></h2>
-            <p><span class="label label-success"><%= @section.name %></span></p>         
+            <h2 class="text-warning text-center"><%= listing.name %></h2>
+            <p class="text-center"><span class="label label-success"><%= @section.name %></span></p>         
             <p><%= listing.description %></p>
+            <p class="text-center"><%= link_to image_tag(listing.image.url), listing %></p>
             <hr>
-            <h3><%= number_to_currency(listing.price, 
+            <h3 class="text-center"><%= number_to_currency(listing.price, 
                 :precision => 2,
                 :unit => "INR", :format => "%u %n") %></h3>
             <hr>
-            <p>
+            <p class="text-right">
               <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
                 :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
                 :title => "Edit") %>

@@ -1,5 +1,7 @@
 class Listing < ApplicationRecord
-
+  	has_attached_file :image, styles: { medium: "200x", thumb: "100x100>" }, default_url: "no_image.jpeg"
+  	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+	
 	belongs_to :section
 
 	scope :visible, lambda { where(:visible => true) }
@@ -11,5 +13,6 @@ class Listing < ApplicationRecord
 					 :length => { :maximum => 255 },
 					 :uniqueness => {:scope => :section_id}
   	validates_presence_of :description
+  	validates_attachment_presence :image
 	
 end

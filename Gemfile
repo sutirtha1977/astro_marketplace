@@ -26,7 +26,7 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

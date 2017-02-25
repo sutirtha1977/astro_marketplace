@@ -63,7 +63,7 @@ class ListingsController < ApplicationController
 private
 
   def listing_params
-    params.require(:listing).permit(:section_id, :name, :visible, :description, :price)
+    params.require(:listing).permit(:section_id, :name, :visible, :description, :price, :image)
   end
 
   def find_section

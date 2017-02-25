@@ -22,7 +22,15 @@
     <div class="col-sm-8">
       <%= f.text_area(:description, class: 'form-control', id: 'content', size:'40x10') %>
     </div>
-  </div>          
+  </div> 
+  <!-- Image Upload -->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="image">Image</label>
+    <div class="col-sm-8">
+      <%= f.file_field :image, class: "form-control" %>
+    </div>
+  </div> 
+
   <!-- Text input-->
   <div class="form-group">
     <label class="col-sm-4 control-label" for="price">Price</label>
