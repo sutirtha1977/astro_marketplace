@@ -2,41 +2,43 @@
 <% @page_desc = "This area is to show all listings" %>
 
 <div class="container">
-  <div class="panel panel-default panel-table">
-    <div class="panel-heading">
-      <div class="row">
-        <div class="col col-xs-6">
-          <%= link_to("Back to Sub Categories", sections_path(:category_id => @section.category.id), :class => 'btn btn-sm btn-success btn-create') %>
-        </div>
-        <div class="col col-xs-6 text-right">
-          <%= link_to 'Add New Listing', new_listing_path(:section_id => @section.id), class: "btn btn-sm btn-primary btn-create" %>
+  <div class="row">
+    <div class="panel panel-default panel-table">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col col-xs-6">
+            <%= link_to("Back to Sub Categories", sections_path(:category_id => @section.category.id), :class => 'btn btn-danger btn-xs') %>
+          </div>
+          <div class="col col-xs-6 text-right">
+            <%= link_to 'Add New Listing', new_listing_path(:section_id => @section.id), class: "btn btn-danger btn-xs" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <% if(@listings.count > 0) %>
-  <div class="row">
-    <% @listings.each do |listing| %>
-      <div class="span3">
-        <div class="well">
-          <h2 class="text-warning"><%= listing.name %></h2>
-          <p><span class="label label-success"><%= @section.name %></span></p>         
-          <p><%= listing.description %></p>
-          <hr>
-          <h3><%= listing.price %></h3>
-          <hr>
-          <p>
-            <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
-              :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
-              :title => "Edit") %>
-            <%= link_to("", delete_listing_path(listing, :section_id => @section.id), 
-              :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
-              :title => "Delete") %>
-          </p>
+    <% if(@listings.count > 0) %>
+
+      <% @listings.each do |listing| %>
+        <div class="span3">
+          <div class="well">
+            <h2 class="text-warning"><%= listing.name %></h2>
+            <p><span class="label label-success"><%= @section.name %></span></p>         
+            <p><%= listing.description %></p>
+            <hr>
+            <h3><%= listing.price %></h3>
+            <hr>
+            <p>
+              <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
+                :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
+                :title => "Edit") %>
+              <%= link_to("", delete_listing_path(listing, :section_id => @section.id), 
+                :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
+                :title => "Delete") %>
+            </p>
+          </div>
         </div>
-      </div>
+      <% end %>
+
     <% end %>
   </div>
-  <% end %>
 </div>
 

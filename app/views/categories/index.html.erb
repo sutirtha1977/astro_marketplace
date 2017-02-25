@@ -1,64 +1,65 @@
 <% @page_title = "Show All Categories" %>
 <% @page_desc = "This area displays all categories" %>
 
-
-<div class="col-md-10 col-md-offset-1">
-  <div class="panel panel-default panel-table">
-    <div class="panel-heading">
-      <div class="row">
-        <div class="col col-xs-6">
-          <h3 class="panel-title"></h3>
-        </div>
-        <div class="col col-xs-6 text-right">
-          <%= link_to 'Add New Category', new_category_path, class: "btn btn-sm btn-primary btn-create" %>
-        </div>
-      </div>
-    </div>
-    <% if(@categories.count > 0) %>
-    <div class="panel-body table-responsive">
-      <table class="table table-striped table-bordered table-list">
-        <thead>
-          <tr>
-            <th class="text-center">Name</th>
-            <th class="text-center">Visible</th>
-            <th class="text-center">Action</th>
-            <th class="text-center">Associated Sub Categories</th>
-          </tr> 
-        </thead>
-        <tbody id="myTable">  
-          <% @categories.each do |category| %>
-          <tr>
-            <td class="text-center"><%= category.name %></td>
-            <td class="text-center"><%= category.visible ? "Yes" : "No" %></td>
-            <td class="text-center">
-              <%= link_to("", edit_category_path(category), 
-                :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
-                :title => "Edit") %>
-              <%= link_to("", delete_category_path(category), 
-                :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
-                :title => "Delete") %>
-            </td>
-            <td class="text-center"><%= link_to 'Click Me!', sections_path(:category_id => category.id), class: "btn btn-sm btn-success btn-create" %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <% end %>
-<!--     <div class="panel-footer">
-      <div class="row">
-        <div class="col col-xs-4">Page 1 of 5
-        </div>
-        <div class="col col-xs-8">
-          <ul class="pagination hidden-xs pull-right" id="myPager">
-          </ul>
-          <ul class="pagination visible-xs pull-right">
-              <li><a href="#">«</a></li>
-              <li><a href="#">»</a></li>
-          </ul>
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default panel-table">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col col-xs-6">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="col col-xs-6 text-right">
+            <%= link_to 'Add Category', new_category_path, class: "btn btn-danger btn-xs" %>
+          </div>
         </div>
       </div>
-    </div> -->
+      <% if(@categories.count > 0) %>
+      <div class="panel-body table-responsive">
+        <table class="table table-striped table-bordered table-list">
+          <thead>
+            <tr>
+              <th class="text-center">Name</th>
+              <th class="text-center">Visible</th>
+              <th class="text-center">Action</th>
+              <th class="text-center">Associated Sub Categories</th>
+            </tr> 
+          </thead>
+          <tbody id="myTable">  
+            <% @categories.each do |category| %>
+            <tr>
+              <td class="text-center"><%= category.name %></td>
+              <td class="text-center"><%= category.visible ? "Yes" : "No" %></td>
+              <td class="text-center">
+                <%= link_to("", edit_category_path(category), 
+                  :class => "btn btn-warning btn-xs glyphicon glyphicon-edit",
+                  :title => "Edit") %>
+                <%= link_to("", delete_category_path(category), 
+                  :class => "btn btn-danger btn-xs glyphicon glyphicon-remove",
+                  :title => "Delete") %>
+              </td>
+              <td class="text-center"><%= link_to 'Click Me!', sections_path(:category_id => category.id), class: "btn btn-success btn-xs" %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <% end %>
+  <!--     <div class="panel-footer">
+        <div class="row">
+          <div class="col col-xs-4">Page 1 of 5
+          </div>
+          <div class="col col-xs-8">
+            <ul class="pagination hidden-xs pull-right" id="myPager">
+            </ul>
+            <ul class="pagination visible-xs pull-right">
+                <li><a href="#">«</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+    </div>
   </div>
 </div>
 

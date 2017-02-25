@@ -1,0 +1,30 @@
+<header>
+  <nav id="as-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Admin Section</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="nav-menu">
+          <ul class="nav navbar-nav navbar-right">
+              <li role="presentation"><%= link_to("Manage Categories", categories_path) %></li>
+              <li role="presentation"><%= link_to("Manage Admin Users", admin_users_path) %></li>
+              <li role="presentation"><%= link_to("Logout", access_logout_path) %></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+  </nav>
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-3"><%= @page_title %></h1>
+      <p class="lead"><%= @page_desc %></p>
+    </div>
+  </div>
+</header>

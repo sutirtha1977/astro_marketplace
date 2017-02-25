@@ -1,13 +1,12 @@
 <% @page_title = "Delete Category" %>
 <% @page_desc = "This area is to delete a category" %>
 
-
+<div class="container">
 <%= form_for(@category, :method => 'delete',html: {class: 'form-horizontal'}) do |f| %>
-	<div class="container">
-		<form>
-			<p class="text-muted"><h4>Are you sure you want to permanently delete <span class="text-danger"><%= f.object.name %></span>?</h4></p>
-			<%= link_to 'Cancel', categories_path, class: "btn btn-default" %>
-			<%= f.submit("Delete Category", :class => 'btn btn-danger') %>
-		</form>
-	</div>
+	<form>
+		<p class="text-muted"><h4>Are you sure you want to permanently delete <span class="text-danger"><%= f.object.name %></span>?</h4></p>
+		<%= link_to 'Cancel', categories_path, class: "btn btn-default" %>
+		<%= f.submit("Delete Category", :class => 'btn btn-danger') %>
+	</form>
 <% end %>
+</div>

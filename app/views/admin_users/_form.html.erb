@@ -1,0 +1,47 @@
+<%= error_messages_for(f.object) %>
+
+<fieldset>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="firstName">First Name</label>
+    <div class="col-sm-8">
+      <%= f.text_field(:first_name, class: 'form-control', id: 'firstName', placeholder: 'Enter First Name') %>
+    </div>
+  </div>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="lastName">Last Name</label>
+    <div class="col-sm-8">
+      <%= f.text_field(:last_name, class: 'form-control', id: 'lastName', placeholder: 'Enter Last Name') %>
+    </div>
+  </div>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="email">Email</label>
+    <div class="col-sm-8">
+      <%= f.text_field(:email, class: 'form-control', id: 'email', placeholder: 'Enter Email') %>
+    </div>
+  </div>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="username">Username</label>
+    <div class="col-sm-8">
+      <%= f.text_field(:username, class: 'form-control', id: 'username', placeholder: 'Enter Username') %>
+    </div>
+  </div>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-sm-4 control-label" for="password">Password</label>
+    <div class="col-sm-8">
+      <%= f.password_field(:password, class: 'form-control', id: 'password', placeholder: 'Enter Password') %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="pull-right">
+        <%= link_to 'Cancel', admin_users_path, class: "btn btn-default" %>
+        <%= f.submit("Submit", :class => 'btn btn-primary') %>
+      </div>
+    </div>
+  </div>
+</fieldset>

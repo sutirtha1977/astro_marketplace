@@ -11,7 +11,7 @@
   <body>
 
   
-  <%= render 'layouts/header' %>
+    <%= render 'layouts/admin_header' %>
 
      
     <div class="container">
@@ -22,11 +22,11 @@
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
           </div>
         <% end %>
-      <% end %>
-      
-      <%= yield %> 
-            
-      <%= render 'layouts/footer' %>     
+      <% end %>               
     </div>
+
+    <%= yield %> 
+    
+  
   </body>
 </html>

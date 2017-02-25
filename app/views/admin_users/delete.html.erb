@@ -1,0 +1,12 @@
+<% @page_title = "Delete Admin User" %>
+<% @page_desc = "This area is to delete an Admin User" %>
+
+<div class="container">
+<%= form_for(@admin_user, :method => 'delete',html: {class: 'form-horizontal'}) do |f| %>
+	<form>
+		<p class="text-muted"><h4>Are you sure you want to permanently delete <span class="text-danger"><%= f.object.name %></span>?</h4></p>
+		<%= link_to 'Cancel', admin_users_path, class: "btn btn-default" %>
+		<%= f.submit("Delete Admin User", :class => 'btn btn-danger') %>
+	</form>
+<% end %>
+</div>
