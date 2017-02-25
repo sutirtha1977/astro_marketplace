@@ -24,7 +24,9 @@
             <p><span class="label label-success"><%= @section.name %></span></p>         
             <p><%= listing.description %></p>
             <hr>
-            <h3><%= listing.price %></h3>
+            <h3><%= number_to_currency(listing.price, 
+                :precision => 2,
+                :unit => "INR", :format => "%u %n") %></h3>
             <hr>
             <p>
               <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 

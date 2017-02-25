@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
     if @listing.update_attributes(listing_params)
       # If save succeeds, redirect to the show action
       flash[:notice] = "Listing updated successfully."
-      redirect_to(listing_path(@listing, :section_id => @section.id))
+      redirect_to(listings_path(@listing, :section_id => @section.id))
     else
       # If save fails, redisplay the form so user can fix problems
       render('edit')

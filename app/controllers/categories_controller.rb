@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
     if @category.update_attributes(category_params)
       # If save succeeds, redirect to the show action
       flash[:notice] = "Category updated successfully."
-      redirect_to(category_path(@category))
+      redirect_to(categories_path)
     else
       # If save fails, redisplay the form so user can fix problems
       render('edit')

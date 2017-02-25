@@ -43,7 +43,7 @@ class SectionsController < ApplicationController
     if @section.update_attributes(section_params)
       # If save succeeds, redirect to the show action
       flash[:notice] = "Sub Category updated successfully."
-      redirect_to(section_path(@section, :category_id => @category.id))
+      redirect_to(sections_path(@section, :category_id => @category.id))
     else
       # If save fails, redisplay the form so user can fix problems
       render('edit')
