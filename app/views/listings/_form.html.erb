@@ -1,59 +1,57 @@
 <%= error_messages_for(f.object) %>
 
+
 <fieldset>
   <!-- Text input-->
   <div class="form-group">
-    <label class="col-sm-4 control-label" for="listingName">Listing Name</label>
-    <div class="col-sm-8">
-      <%= f.text_field(:name, class: 'form-control', id: 'listingName', placeholder: 'Enter Listing Name') %>
-      <small id="listingNameHelp" class="form-text text-danger">Please enter the Listing Name.</small>
+    <label class="col-md-2 control-label" for="listingName">Listing Name</label>  
+    <div class="col-md-10">
+      <%= f.text_field(:name, class: 'form-control input-md', id: 'listingName', placeholder: 'Enter Listing Name') %>
     </div>
   </div>
   <!-- Text input-->
   <div class="form-group">
-    <label class="col-sm-4 control-label" for="sectionName">Sub Category Name</label>
-    <div class="col-sm-8 text-danger">
+    <label class="col-md-2 control-label" for="sectionName">Sub Category Name</label>  
+    <div class="col-md-10">
       <%= f.object.section.name %>
     </div>
   </div>
-  <!-- Text Area-->
+  <!-- Text area-->
   <div class="form-group">
-    <label class="col-sm-4 control-label" for="description">Description</label>
-    <div class="col-sm-8">
+    <label class="col-md-2 control-label" for="description">Description</label>
+    <div class="col-md-10">                     
       <%= f.text_area(:description, class: 'form-control', id: 'content', size:'40x10') %>
     </div>
-  </div> 
+  </div>
   <!-- Image Upload -->
   <div class="form-group">
-    <label class="col-sm-4 control-label" for="image">Image</label>
-    <div class="col-sm-8">
+    <label class="col-md-2 control-label" for="image">Upload Image</label>
+    <div class="col-md-10">                     
       <%= f.file_field :image, class: "form-control" %>
     </div>
-  </div> 
-
+  </div>
   <!-- Text input-->
   <div class="form-group">
-    <label class="col-sm-4 control-label" for="price">Price</label>
-    <div class="col-sm-8">
+    <label class="col-md-2 control-label" for="price">Price</label>  
+    <div class="col-md-10">
       <%= f.text_field(:price, class: 'form-control', id: 'price', placeholder: 'Enter Price') %>
     </div>
   </div>
   <!-- Checkbox -->
   <div class="form-group">
-    <div class="col-xs-offset-4">
-      <%= label_tag(:visible, "Visible") %>
-      <%= f.check_box :visible %>
+    <label class="col-md-2 control-label" for="blankspace1"></label>
+    <div class="col-md-10">
+      <label class="checkbox-inline" for="visible">
+        <%= f.check_box :visible %>
+        Visible
+      </label>
     </div>
   </div>
-
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <div class="pull-right">
-        <%= link_to 'Cancel', listings_path(:section_id => @section.id), class: "btn btn-default" %>
-        <%= f.submit("Submit", :class => 'btn btn-primary') %>
-      </div>
-    </div>
+    <label class="col-md-2 control-label" for="blankspace2"></label>
+    <div class="col-md-10 text-left">
+      <%= link_to 'Cancel', listings_path(:section_id => @section.id), class: "btn btn-bordered-warning" %>
+      <%= f.submit("Submit", :class => 'btn btn-bordered-primary') %> 
+    </div>  
   </div>
 </fieldset>
-
-

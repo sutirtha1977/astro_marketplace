@@ -24,6 +24,17 @@
       <% @listings.each do |listing| %>
         <div class="span3">
           <div class="well">
+            <p class="text-right">
+              <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
+                :class => "btn btn-default btn-sm fa fa-pencil",
+                :title => "Edit") %>
+              <%= link_to("", delete_listing_path(listing, :section_id => @section.id), 
+                :class => "btn btn-danger btn-sm fa fa-trash",
+                :title => "Delete") %>
+              <% if listing.visible %>
+                <i class="fa fa-bullseye fa-lg text-danger" aria-hidden="true"></i>
+              <% end %>
+            </p>
             <h2 class="text-warning text-center"><%= listing.name %></h2>
             <h3 class="text-warning text-center"><%= @section.name %></h3>     
             <p><%= listing.description %></p>
@@ -32,15 +43,6 @@
             <h3 class="text-center"><%= number_to_currency(listing.price, 
                 :precision => 2,
                 :unit => "INR", :format => "%u %n") %></h3>
-            <hr>
-            <p class="text-right">
-              <%= link_to("", edit_listing_path(listing, :section_id => @section.id), 
-                :class => "btn btn-bordered-warning btn-xs glyphicon glyphicon-edit",
-                :title => "Edit") %>
-              <%= link_to("", delete_listing_path(listing, :section_id => @section.id), 
-                :class => "btn btn-bordered-danger btn-xs glyphicon glyphicon-remove",
-                :title => "Delete") %>
-            </p>
           </div>
         </div>
       <% end %>

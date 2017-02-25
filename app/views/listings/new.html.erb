@@ -2,12 +2,9 @@
 <% @page_desc = "This area is to create a listing" %>
 
 <div class="container">
-  <div class="row">
 	<%= form_for(@listing, 
 		:url => listings_path(:section_id => @section.id), 
 		html: {:multipart => true , :class => 'form-horizontal'}) do |f| %>
 	    <%= render(:partial => 'form', :locals => {:f => f}) %>
 	<% end %>
-
-  </div>
 </div>

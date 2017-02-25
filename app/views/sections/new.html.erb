@@ -2,11 +2,7 @@
 <% @page_desc = "This area is to create a new Sub Category" %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-		<%= form_for(@section, :url => sections_path(:category_id => @category.id), html: {class: 'form-horizontal'}) do |f| %>
-		    <%= render(:partial => 'form', :locals => {:f => f}) %>
-		<% end %>
-    </div>
-  </div>
+	<%= form_for(@section, :url => sections_path(:category_id => @category.id), html: {class: 'form-horizontal'}) do |f| %>
+	    <%= render(:partial => 'form', :locals => {:f => f}) %>
+	<% end %>
 </div>

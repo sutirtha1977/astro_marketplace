@@ -3,33 +3,32 @@
 <fieldset>
   <!-- Text input-->
   <div class="form-group">
-    <label class="col-sm-4 control-label" for="sectionName">Sub Category Name</label>
-    <div class="col-sm-8">
-      <%= f.text_field(:name, class: 'form-control', id: 'sectionName', placeholder: 'Enter Sub Category Name') %>
-      <small id="subCategoryNameHelp" class="form-text text-danger">Please enter the Sub Category Name.</small>
+    <label class="col-md-4 control-label" for="sectionName">Sub Category Name</label>  
+    <div class="col-md-4">
+      <%= f.text_field(:name, class: 'form-control input-md', id: 'sectionName', placeholder: 'Enter Sub Category Name') %>
     </div>
   </div>
   <!-- Text input-->
   <div class="form-group">
-    <label class="col-sm-4 control-label" for="categoryName">Category Name</label>
-    <div class="col-sm-8 text-danger">
+    <label class="col-md-4 control-label" for="categoryName">Category Name</label>  
+    <div class="col-md-4">
       <%= f.object.category.name %>
     </div>
   </div>
-  <!-- Checkbox -->
   <div class="form-group">
-    <div class="col-xs-offset-4">
-      <%= label_tag(:visible, "Visible") %>
-      <%= f.check_box :visible %>
+    <label class="col-md-4 control-label" for="blankspace1"></label>
+    <div class="col-md-4">
+      <label class="checkbox-inline" for="visible">
+        <%= f.check_box :visible %>
+        Visible
+      </label>
     </div>
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <div class="pull-right">
-        <%= link_to 'Cancel', sections_path(:category_id => @category.id), class: "btn btn-default" %>
-        <%= f.submit("Submit", :class => 'btn btn-primary') %>
-      </div>
-    </div>
+    <label class="col-md-4 control-label" for="blankspace2"></label>
+    <div class="col-md-4 text-left">
+        <%= link_to 'Cancel', sections_path(:category_id => @category.id), class: "btn btn-bordered-warning" %>
+        <%= f.submit("Submit", :class => 'btn btn-bordered-primary') %> 
+    </div>  
   </div>
 </fieldset>
-

@@ -41,14 +41,10 @@ class AdminUsersController < ApplicationController
 
   def destroy
     @admin_user = AdminUser.find(params[:id])
-    if (@admin_user.id === session[:user_id])
-      flash[:notice] = "Cannot delete logged in user!!!"
-      redirect_to(admin_users_path)
-    else
-      @admin_user.destroy
-      flash[:notice] = "Admin user destroyed successfully."
-      redirect_to(admin_users_path)
-    end    
+    @admin_user.destroy
+    flash[:notice] = "Admin user destroyed successfully."
+    redirect_to(admin_users_path)
+  
   end
 
   private
